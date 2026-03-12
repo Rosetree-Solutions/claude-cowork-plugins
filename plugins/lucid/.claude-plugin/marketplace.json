@@ -1,0 +1,14 @@
+{
+  "name": "rosetree-lucid-plugin",
+  "owner": {
+    "name": "Rosetree Solutions"
+  },
+  "plugins": [
+    {
+      "name": "lucid",
+      "source": "./",
+      "description": "Connect to Lucid for creating, searching, and sharing diagrams",
+      "version": "1.0.0"
+    }
+  ]
+}

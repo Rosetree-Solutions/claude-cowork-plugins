@@ -1,0 +1,9 @@
+{
+  "name": "lucid",
+  "description": "Connect Claude Code to Lucid for searching, creating, and sharing diagrams via the Lucid MCP server",
+  "version": "1.0.0",
+  "author": {
+    "name": "Rosetree Solutions"
+  },
+  "keywords": ["lucid", "lucidchart", "lucidspark", "diagrams", "mcp"]
+}
