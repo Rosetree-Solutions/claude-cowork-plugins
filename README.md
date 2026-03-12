@@ -14,12 +14,27 @@ These plugins work with both [Claude CoWork](https://claude.com/cowork) and [Cla
 
 ### Claude CoWork
 
-1. Open **Settings** and navigate to the **Plugins** section
-2. Click **Add marketplace** and enter the GitHub URL:
-   ```
-   Rosetree-Solutions/claude-cowork-plugins
-   ```
-3. Browse the marketplace and install the **lucid** plugin
+**Step 1.** Open the **Customize** panel, select **Connectors**, then click **Browse plugins**.
+
+<img src="resources/01-connectors-browse-plugins.png" alt="Open Connectors and Browse plugins" width="600">
+
+**Step 2.** Switch to the **Personal** tab, click the **+** button, and select **Add marketplace from GitHub**.
+
+<img src="resources/02-personal-add-marketplace.png" alt="Personal tab, add marketplace" width="600">
+
+**Step 3.** Enter `Rosetree-Solutions/claude-cowork-plugins` and click **Sync**.
+
+<img src="resources/03-add-marketplace-dialog.png" alt="Add marketplace dialog" width="500">
+
+**Step 4.** The **Lucid** plugin appears in the marketplace. Click **Install**.
+
+<img src="resources/04-install-plugin.png" alt="Install the Lucid plugin" width="600">
+
+### Checking for updates
+
+To refresh available plugins after new versions are published, click the **...** menu next to the marketplace name and select **Check for updates**.
+
+<img src="resources/05-marketplace-options.png" alt="Check for updates" width="600">
 
 ### Claude Code (CLI)
 
