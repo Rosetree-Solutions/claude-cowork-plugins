@@ -10,11 +10,22 @@ A collection of plugins for [Claude Code](https://docs.anthropic.com/en/docs/cla
 
 ## Installation
 
-These plugins are designed for use with [Claude CoWork](https://claude.com/cowork). To install a plugin, run the following commands inside Claude Code:
+These plugins work with both [Claude CoWork](https://claude.com/cowork) and [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (CLI).
+
+### Claude CoWork
+
+1. Open **Settings** and navigate to the **Plugins** section
+2. Click **Add marketplace** and enter the GitHub URL:
+   ```
+   Rosetree-Solutions/claude-cowork-plugins
+   ```
+3. Browse the marketplace and install the **lucid** plugin
+
+### Claude Code (CLI)
 
 1. **Add the marketplace:**
    ```
-   /plugin marketplace add rosetree/claude-cowork-plugins
+   /plugin marketplace add Rosetree-Solutions/claude-cowork-plugins
    ```
 
 2. **Install a plugin:**
@@ -22,29 +33,29 @@ These plugins are designed for use with [Claude CoWork](https://claude.com/cowor
    /plugin install lucid@rosetree-lucid-plugin
    ```
 
-3. **Authenticate:** The first time you use a plugin's MCP tools, you'll be prompted to connect your account (e.g., sign in to Lucid).
+### After installation
 
-Once installed, the plugin's skills are available automatically. For example, ask Claude to "create a flowchart" or "find my Lucid diagrams" and the appropriate skill will activate.
+The first time you use a plugin's MCP tools, you'll be prompted to connect your account (e.g., sign in to Lucid). Once authenticated, the plugin's skills are available automatically — ask Claude to "create a flowchart" or "find my Lucid diagrams" and the appropriate skill will activate.
 
-## Plugin Structure
-
-Each plugin lives in its own directory under `plugins/` and can include:
+## Repository Structure
 
 ```
-plugins/<plugin-name>/
-├── .claude-plugin/
-│   ├── plugin.json          # Plugin manifest (name, description, version, author)
-│   └── marketplace.json     # Marketplace catalog for plugin distribution
-├── .mcp.json                # MCP server configuration
-├── .claude/
-│   └── settings.local.json  # Permission allowlists for MCP tools
-└── skills/
-    └── <skill-name>/
-        └── SKILL.md          # Skill definition with instructions for Claude
+.claude-plugin/
+└── marketplace.json            # Marketplace catalog (registers plugins for distribution)
+plugins/
+└── <plugin-name>/
+    ├── .claude-plugin/
+    │   └── plugin.json         # Plugin manifest (name, description, version, author)
+    ├── .mcp.json               # MCP server configuration
+    ├── .claude/
+    │   └── settings.local.json # Permission allowlists for MCP tools
+    └── skills/
+        └── <skill-name>/
+            └── SKILL.md        # Skill definition with instructions for Claude
 ```
 
-- **plugin.json** — Identifies the plugin and provides metadata (name, description, version, keywords).
-- **marketplace.json** — Catalog file that registers the plugin for distribution via `/plugin marketplace add`.
+- **marketplace.json** — Lives at the repo root in `.claude-plugin/`. Registers all plugins in this repository for distribution via `/plugin marketplace add`.
+- **plugin.json** — Identifies an individual plugin and provides metadata (name, description, version, keywords).
 - **.mcp.json** — Registers MCP servers (HTTP or stdio) that the plugin connects to.
 - **settings.local.json** — Whitelists specific MCP tools and restricts external access (e.g., domain-scoped `WebFetch`).
 - **SKILL.md** — Defines a skill with YAML front matter (`name`, `description`) and markdown instructions that guide Claude through a workflow using the plugin's MCP tools.
@@ -64,5 +75,5 @@ plugins/<plugin-name>/
 3. Add `.mcp.json` if your plugin uses an MCP server.
 4. Add skills under `skills/<skill-name>/SKILL.md` for guided workflows.
 5. Add `.claude/settings.local.json` to configure tool permissions.
-6. Add a `.claude-plugin/marketplace.json` to register the plugin for distribution.
+6. Add your plugin to the root `.claude-plugin/marketplace.json` so it's discoverable.
 7. Update the **Available Plugins** table in this README.

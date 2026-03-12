@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "lucid",
-      "source": "./",
+      "source": "./plugins/lucid",
       "description": "Connect to Lucid for creating, searching, and sharing diagrams",
       "version": "1.0.0"
     }
