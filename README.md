@@ -1,4 +1,4 @@
-# Claude Cowork Plugins
+# Claude Plugins
 
 A collection of plugins for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) that bundle MCP server integrations with custom skills.
 
